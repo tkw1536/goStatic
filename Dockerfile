@@ -8,4 +8,5 @@ RUN CGO_ENABLED=0 GOARCH=amd64 GOOS=linux go build -tags netgo -installsuffix ne
 FROM scratch
 WORKDIR /
 COPY --from=builder /go/src/github.com/PierreZ/goStatic/goStatic .
+EXPOSE 8043
 ENTRYPOINT ["/goStatic"]
